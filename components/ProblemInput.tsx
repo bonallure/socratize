@@ -90,7 +90,7 @@ const ProblemInput: React.FC<ProblemInputProps> = ({ onSendMessage, isLoading })
           </button>
         </div>
         <p className="text-[10px] text-slate-400 mt-2 text-center">
-          Socratis helps you think. It will not solve the problem for you, but will guide you to the solution.
+          Socratize helps you think. It will not solve the problem for you, but will guide you to the solution.
         </p>
       </div>
     </div>
