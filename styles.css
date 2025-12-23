@@ -1,0 +1,149 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+    box-sizing: border-box;
+  }
+
+  /*Applies border box to each element*/
+  
+  html, body {
+    margin: 0;      /*Removes default browser margin/padding */
+    padding: 0;     
+    height: 100%;       /*Sets a clean system front stack*/
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #f8fafc;
+  }
+  
+  button {
+    border: none;       /*Resets buttons so they don't use browser styles*/
+    background: none;
+    cursor: pointer;        /*Makes mouse show hand icon*/
+  }
+  
+  /* =========================
+     FLEXBOX UTILITIES
+  ========================= */
+  .flex { display: flex; }      /*Sets element to flex conaineer*/
+  .flex-col { flex-direction: column; }     /*Changes main axis from horizontal to vertical*/
+  .flex-grow { flex: 1; }       /*Lets an item grow to fill available space alonmg the main axis*/
+  .flex-shrink-0 { flex-shrink: 0; }        /*Prevents flec item from shrinking when container is too small*/
+  .items-center { align-items: center; }        /*Aligns flex items vertically along the cross axis*/
+  .justify-center { justify-content: center; }      /*Algns items horizontally along the main axis*/
+  .justify-between { justify-content: space-between; }      /*Places items ar opposite end of container*/
+  .gap-2 { gap: 0.5rem; }       /*Adds space between flex items wihtout using marrgin on each child*/
+  .gap-3 { gap: 0.75rem; }
+  .gap-4 { gap: 1rem; }
+  .gap-6 { gap: 1.5rem; }
+  
+  /* =========================
+     SIZING
+  ========================= */
+  .h-screen { height: 100vh; }
+  .h-16 { height: 4rem; }
+  .w-64 { width: 16rem; }
+  .w-full { width: 100%; }
+  .w-8 { width: 2rem; }
+  .h-8 { height: 2rem; }
+  .w-10 { width: 2.5rem; }
+  .h-10 { height: 2.5rem; }
+  .max-w-4xl { max-width: 56rem; }
+  .max-w-2xl { max-width: 42rem; }
+  
+  /* =========================
+     SPACING
+  ========================= */
+  .p-2 { padding: 0.5rem; }
+  .p-4 { padding: 1rem; }
+  .p-6 { padding: 1.5rem; }
+  .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .px-4 { padding-left: 1rem; padding-right: 1rem; }
+  .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+  .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+  .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+  .mb-2 { margin-bottom: 0.5rem; }
+  .mb-4 { margin-bottom: 1rem; }
+  .mb-6 { margin-bottom: 1.5rem; }
+  .mb-8 { margin-bottom: 2rem; }
+  .mt-1 { margin-top: 0.25rem; }
+  
+  /* =========================
+     COLORS
+  ========================= */
+  .bg-white { background-color: #ffffff; }
+  .bg-slate-50 { background-color: #f8fafc; }
+  .bg-slate-100 { background-color: #f1f5f9; }
+  .bg-slate-200 { background-color: #e2e8f0; }
+  .bg-indigo-50 { background-color: #eef2ff; }
+  .bg-indigo-100 { background-color: #e0e7ff; }
+  .bg-indigo-600 { background-color: #4f46e5; }
+  .bg-green-100 { background-color: #dcfce7; }
+  
+  .text-white { color: #ffffff; }
+  .text-slate-400 { color: #94a3b8; }
+  .text-slate-500 { color: #64748b; }
+  .text-slate-600 { color: #475569; }
+  .text-slate-700 { color: #334155; }
+  .text-slate-800 { color: #1e293b; }
+  .text-indigo-500 { color: #6366f1; }
+  .text-indigo-600 { color: #4f46e5; }
+  .text-green-700 { color: #15803d; }
+  
+  /* =========================
+     BORDERS & RADIUS
+  ========================= */
+  .border { border: 1px solid #e2e8f0; }
+  .border-r { border-right: 1px solid #e2e8f0; }
+  .border-t { border-top: 1px solid #e2e8f0; }
+  .border-slate-200 { border-color: #e2e8f0; }
+  .rounded-lg { border-radius: 0.5rem; }
+  .rounded-xl { border-radius: 0.75rem; }
+  .rounded-2xl { border-radius: 1rem; }
+  .rounded-3xl { border-radius: 1.5rem; }
+  .rounded-full { border-radius: 9999px; }
+  
+  /* =========================
+     TYPOGRAPHY
+  ========================= */
+  .font-bold { font-weight: 700; }
+  .font-semibold { font-weight: 600; }
+  .font-medium { font-weight: 500; }
+  .text-xs { font-size: 0.75rem; }
+  .text-sm { font-size: 0.875rem; }
+  .text-xl { font-size: 1.25rem; }
+  .text-3xl { font-size: 1.875rem; }
+  .uppercase { text-transform: uppercase; }
+  .tracking-wider { letter-spacing: 0.05em; }
+  .text-center { text-align: center; }
+  
+  /* =========================
+     EFFECTS
+  ========================= */
+  .shadow-sm { box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+  .shadow-md { box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+  .transition-colors { transition: color 0.2s, background-color 0.2s; }
+  .transition-all { transition: all 0.2s; }
+  
+  /* =========================
+     OVERFLOW & POSITION
+  ========================= */
+  .overflow-hidden { overflow: hidden; }
+  .overflow-y-auto { overflow-y: auto; }
+  .relative { position: relative; }
+  .sticky { position: sticky; }
+  .top-0 { top: 0; }
+  .z-20 { z-index: 20; }
+  
+  /* =========================
+     RESPONSIVE
+  ========================= */
+  .hidden { display: none; }
+  
+  @media (min-width: 768px) {
+    .md\\:flex { display: flex; }
+  }
+  
+  @media (min-width: 1024px) {
+    .lg\\:block { display: block; }
+  }
