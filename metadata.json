@@ -1,0 +1,7 @@
+{
+  "name": "Socratize AI Tutor",
+  "description": "An intelligent, Socratic-style tutoring platform that guides students through complex problems using step-by-step reasoning and hints rather than giving direct answers.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
