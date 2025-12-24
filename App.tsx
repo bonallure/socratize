@@ -3,9 +3,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Message, Step } from './types';
 import { sendMessageToTutor, generateProblemSteps } from './services/geminiService';
 import { TOPICS, INITIAL_SUGGESTIONS } from './constants';
-import ChatMessage from './components/ChatMessage';
-import ProblemInput from './components/ProblemInput';
-import StepTracker from './components/StepTracker';
+import ChatMessage from './components/chatMessage/ChatMessage';
+import ProblemInput from './components/problemInput/ProblemInput';
+import StepTracker from './components/stepTracker/StepTracker';
 import { GraduationCap, BookOpen, Clock, Settings, Search, Sparkles, Loader2 } from 'lucide-react';
 import styles from './App.module.css';
 
