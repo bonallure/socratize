@@ -1,13 +1,19 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vitest/config';
-import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [react()],
   test: {
     globals: true,
-    environment: 'jsdom',
+    environment: 'happy-dom',
     setupFiles: './setupTests.ts',
-    include: ['**/*.test.{ts,tsx}'],
+    include: [
+      '**/*.test.{ts,tsx}',
+      'services/**/*.test.{ts,tsx}',
+      'components/**/*.test.{ts,tsx}',
+    ],
+    pool: 'forks',
+  },
+  define: {
+    global: 'globalThis',
   },
 });

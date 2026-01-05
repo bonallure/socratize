@@ -20,10 +20,5 @@ export default defineConfig(({ mode }) => {
         '@': fileURLToPath(new URL('.', import.meta.url)),
       },
     },
-    test: {
-      globals: true,               // allows describe/it/expect without imports
-      environment: 'jsdom',        // simulate browser DOM environment
-      setupFiles: './setupTests.ts', // your setup file for jest-dom matchers
-    },
   };
 });
