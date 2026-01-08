@@ -6,6 +6,8 @@
     "jsx": "react-jsx",
     "moduleResolution": "Node",
     "isolatedModules": true,
+    "sourceMap": true,
+    "inlineSources": true,
     "skipLibCheck": true,
     "allowJs": true,
     "noEmit": true,
