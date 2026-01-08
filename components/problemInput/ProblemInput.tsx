@@ -1,13 +1,13 @@
-
 import React, { useState, useRef } from 'react';
 import { Send, Image as ImageIcon, X } from 'lucide-react';
+import styles from './ProblemInput.module.css';
 
 interface ProblemInputProps {
   onSendMessage: (text: string, image?: string) => void;
   isLoading: boolean;
 }
 
-const ProblemInput: React.FC<ProblemInputProps> = ({ onSendMessage, isLoading }) => {
+const ProblemInput = ({ onSendMessage, isLoading }: ProblemInputProps) => {
   const [input, setInput] = useState('');
   const [image, setImage] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -33,24 +33,24 @@ const ProblemInput: React.FC<ProblemInputProps> = ({ onSendMessage, isLoading })
   };
 
   return (
-    <div className="bg-white border-t border-slate-200 p-4 sticky bottom-0 z-10">
-      <div className="max-w-4xl mx-auto">
+    <div className={styles.container}>
+      <div className={styles.innerWrapper}>
         {image && (
-          <div className="relative inline-block mb-3">
-            <img src={image} alt="Preview" className="h-24 w-auto rounded-lg border border-slate-300 shadow-sm" />
+          <div className={styles.imagePreviewWrapper}>
+            <img src={image} alt="Preview" className={styles.previewImage} />
             <button 
               onClick={() => setImage(null)}
-              className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 shadow-md hover:bg-red-600 transition-colors"
+              className={styles.removeImageButton}
             >
               <X size={14} />
             </button>
           </div>
         )}
-        
-        <div className="flex items-end gap-2 bg-slate-50 border border-slate-200 rounded-2xl p-2 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-transparent transition-all">
+
+        <div className={styles.inputBar}>
           <button 
             onClick={() => fileInputRef.current?.click()}
-            className="p-2 text-slate-500 hover:text-indigo-600 hover:bg-white rounded-xl transition-colors"
+            className={styles.uploadButton}
             title="Upload image of your problem"
           >
             <ImageIcon size={22} />
@@ -60,7 +60,7 @@ const ProblemInput: React.FC<ProblemInputProps> = ({ onSendMessage, isLoading })
             ref={fileInputRef} 
             onChange={handleFileChange} 
             accept="image/*" 
-            className="hidden" 
+            className="hidden" // keeping hidden since CSS module doesn't define it
           />
           
           <textarea
@@ -74,22 +74,23 @@ const ProblemInput: React.FC<ProblemInputProps> = ({ onSendMessage, isLoading })
               }
             }}
             placeholder="Type your question or explain what you're working on..."
-            className="flex-grow bg-transparent border-none focus:ring-0 text-slate-800 placeholder-slate-400 py-2 resize-none max-h-32 scrollbar-hide"
+            className={styles.textarea}
           />
-          
+
           <button
             onClick={handleSend}
             disabled={(!input.trim() && !image) || isLoading}
-            className={`p-2 rounded-xl transition-all ${
+            className={`${styles.sendButton} ${
               (input.trim() || image) && !isLoading
-                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200 hover:scale-105 active:scale-95'
-                : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                ? styles.sendButtonEnabled
+                : styles.sendButtonDisabled
             }`}
           >
             <Send size={22} />
           </button>
         </div>
-        <p className="text-[10px] text-slate-400 mt-2 text-center">
+
+        <p className={styles.footnote}>
           Socratize helps you think. It will not solve the problem for you, but will guide you to the solution.
         </p>
       </div>
