@@ -1,5 +1,5 @@
 import React from 'react';
-import { Message } from '../../types';
+import { Message } from '@/types';
 import { User, Cpu } from 'lucide-react';
 import styles from './ChatMessage.module.css';
 
@@ -7,7 +7,7 @@ interface ChatMessageProps {
   message: Message;
 }
 
-const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
+const ChatMessage = ({ message }: ChatMessageProps) => {
   const isAssistant = message.role === 'assistant';
   
   return (

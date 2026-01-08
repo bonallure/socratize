@@ -1,13 +1,13 @@
 import React from 'react';
 import { CheckCircle2, Circle, PlayCircle } from 'lucide-react';
-import { Step } from '../../types';
+import { Step } from '@/types';
 import styles from './StepTracker.module.css';
 
 interface StepTrackerProps {
   steps: Step[];
 }
 
-const StepTracker: React.FC<StepTrackerProps> = ({ steps }) => {
+const StepTracker = ({ steps }: StepTrackerProps) => {
   if (steps.length === 0) return null;
 
   return (

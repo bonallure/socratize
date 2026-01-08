@@ -7,7 +7,7 @@ interface ProblemInputProps {
   isLoading: boolean;
 }
 
-const ProblemInput: React.FC<ProblemInputProps> = ({ onSendMessage, isLoading }) => {
+const ProblemInput = ({ onSendMessage, isLoading }: ProblemInputProps) => {
   const [input, setInput] = useState('');
   const [image, setImage] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);

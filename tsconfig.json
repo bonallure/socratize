@@ -17,5 +17,14 @@
       "@/*": ["./*"]
     },
     "types": ["vitest", "node"]
-  }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "types/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
