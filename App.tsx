@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Message, Step } from './types';
 import { sendMessageToTutor, generateProblemSteps } from './services/geminiService';
@@ -9,7 +8,7 @@ import StepTracker from './components/stepTracker/StepTracker';
 import { GraduationCap, BookOpen, Clock, Settings, Search, Sparkles, Loader2 } from 'lucide-react';
 import styles from './App.module.css';
 
-const App: React.FC = () => {
+const App = () => {
   const [messages, setMessages] = useState<Message[]>([]);    //Stores entire chat history in a list
   const [isLoading, setIsLoading] = useState(false);    //Tracks whether the AI is thinking or has responded
   const [steps, setSteps] = useState<Step[]>([]);   //Tracks the problem-solving steps
