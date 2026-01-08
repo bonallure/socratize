@@ -177,7 +177,7 @@ When contributing to Socratize:
 
 ## License
 
-[Your License Here]
+This project is licensed under the MIT License.
 
 ## Authors
 
