@@ -33,6 +33,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:unit": "vitest run --exclude '**/*.integration.test.ts'",
+    "test:integration": "vitest run --reporter=verbose **/*.integration.test.ts",
+    "test:all": "vitest run"
   }
 }
