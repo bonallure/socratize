@@ -9,7 +9,8 @@ export async function sendMessageToTutor(
   messages: Message[],
   imageUri?: string
 ): Promise<string> {
-  const modelName = 'gemini-3-pro-preview';
+  // const modelName = 'gemini-3-pro-preview';
+  const modelName = 'gemini-2.5-flash'
   
   // Format history for Gemini
   const contents = messages.map(msg => ({
